@@ -305,6 +305,13 @@ window.EVENTS = [
       en: "Old-city water-pouring rites at home, followed by the city-wide street water festival.",
       th: "พิธีรดน้ำในครอบครัวที่บ้าน ตามด้วยเทศกาลสาดน้ำทั่วเมือง",
     },
+    image: {
+      src: "assets/songkran-in-chiang-mai.jpg",
+      alt: {
+        en: "People celebrating Songkran with water splashes along the Chiang Mai old-city moat.",
+        th: "ผู้คนเล่นน้ำสงกรานต์ริมคูเมืองเก่าเชียงใหม่",
+      },
+    },
     cues: ["temple alms", "water-pouring rite", "street procession"],
     glyph: "น้ำ",
     verified: { institution: "Chiang Mai Municipality", date: "March 2026" },
