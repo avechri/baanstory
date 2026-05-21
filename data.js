@@ -206,6 +206,13 @@ window.EVENTS = [
       en: "Beeswax candle floats carved by temple teams over three months, paraded for the start of Buddhist Lent.",
       th: "เทียนพรรษาแกะสลักจากไขผึ้งโดยทีมของแต่ละวัดใช้เวลาสามเดือน แห่ในวันเริ่มเข้าพรรษา",
     },
+    image: {
+      src: "assets/ubon-candle-procession.jpg",
+      alt: {
+        en: "Dancers carrying candles during the Ubon Candle Procession parade.",
+        th: "นางรำถือเทียนในขบวนแห่เทียนพรรษาอุบลราชธานี",
+      },
+    },
     cues: ["beeswax carving", "temple competition", "Buddhist Lent"],
     glyph: "เทียน",
     verified: { institution: "Ubon Ratchathani Provincial Office", date: "May 2026" },
