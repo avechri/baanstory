@@ -506,6 +506,24 @@ function HonestGap({ children }) { return <span className="gap">{children}</span
    Editorial placeholder image — drawing motifs in CSS
    ============================================================ */
 function PlaceholderImage({ event, label }) {
+  if (event.image?.src) {
+    return (
+      <img
+        src={event.image.src}
+        alt={event.image.alt?.en || ""}
+        loading="lazy"
+        decoding="async"
+        style={{
+          width: "100%",
+          aspectRatio: "16 / 11",
+          objectFit: "cover",
+          borderRadius: "var(--radius-card)",
+          display: "block",
+        }}
+      />
+    );
+  }
+
   // Always render the Thai-script glyph on a tinted/striped block.
   // The diagonal hairline pattern is the consistent "editorial placeholder" texture.
   return (

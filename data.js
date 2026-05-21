@@ -17,6 +17,13 @@ window.EVENTS = [
       en: "Open workshops, painted paper umbrellas and a village parade near Chiang Mai.",
       th: "เวิร์กช็อปเปิดให้เข้าชม ร่มกระดาษสาวาดมือ และขบวนแห่ในหมู่บ้านใกล้เชียงใหม่",
     },
+    image: {
+      src: "assets/bo-sang-umbrella-festival.webp",
+      alt: {
+        en: "Women riding bicycles with yellow paper umbrellas in the Bo Sang parade.",
+        th: "หญิงขี่จักรยานถือร่มกระดาษสีเหลืองในขบวนแห่บ่อสร้าง",
+      },
+    },
     cues: ["saa-paper umbrellas", "village parade", "open workshops"],
     glyph: "ร่ม",
     verified: { institution: "Bo Sang Umbrella Festival Committee", date: "December 2025" },
