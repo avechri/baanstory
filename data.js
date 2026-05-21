@@ -251,6 +251,13 @@ window.EVENTS = [
       en: "Hand-built bamboo rockets fired into the sky to ask the rain spirit for monsoon water.",
       th: "บั้งไฟที่ทำมือจากไม้ไผ่ถูกจุดขึ้นฟ้าเพื่อขอน้ำฝนจากเทพฝน",
     },
+    image: {
+      src: "assets/bun-bang-fai-rocket-festival.jpeg",
+      alt: {
+        en: "An ornate festival float carrying a decorated rocket during Bun Bang Fai Rocket Festival.",
+        th: "ขบวนแห่ประดับลวดลายพร้อมบั้งไฟในงานบุญบั้งไฟ",
+      },
+    },
     cues: ["bamboo rockets", "village teams", "monsoon ritual"],
     glyph: "บั้ง",
     verified: null,
