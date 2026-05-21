@@ -83,6 +83,13 @@ window.EVENTS = [
       en: "Sky lanterns released over the old city, paper-craft processions and almsgiving at dawn.",
       th: "ปล่อยโคมลอยเหนือเมืองเก่า ขบวนแห่โคมไฟ และตักบาตรเช้า",
     },
+    image: {
+      src: "assets/yi-peng-lantern-festival.webp",
+      alt: {
+        en: "Hundreds of glowing sky lanterns rising over the Yi Peng festival crowd at night.",
+        th: "โคมลอยสว่างนับร้อยลอยขึ้นเหนือผู้คนในงานยี่เป็งยามค่ำคืน",
+      },
+    },
     cues: ["sky lanterns", "krathong floats", "paper craft"],
     glyph: "โคม",
     verified: null, // free entry
