@@ -148,6 +148,13 @@ window.EVENTS = [
       en: "Painted spirit masks carved from steamed coconut husks and palm fronds, worn through a three-day Buddhist procession.",
       th: "หน้ากากผีลงสีจากกาบมะพร้าวและทางมะพร้าวนึ่ง สวมในขบวนพุทธสามวัน",
     },
+    image: {
+      src: "assets/phi-ta-khon-mask-festival.webp",
+      alt: {
+        en: "A Phi Ta Khon performer in a tall painted ghost mask during the village festival.",
+        th: "ผู้ร่วมงานผีตาโขนสวมหน้ากากผีสูงลวดลายสีสดในเทศกาลประจำหมู่บ้าน",
+      },
+    },
     cues: ["coconut husk masks", "village procession", "Buddhist rites"],
     glyph: "ผี",
     verified: { institution: "Dan Sai District Cultural Council", date: "March 2026" },
