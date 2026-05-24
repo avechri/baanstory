@@ -582,6 +582,7 @@ function ContactPage({ lang, navigate, params, onToast }) {
   const [errors, setErrors] = useStateP({});
   const [submitting, setSubmitting] = useStateP(false);
   const [success, setSuccess] = useStateP(false);
+  const [submitError, setSubmitError] = useStateP("");
 
   useEffectP(() => {
     if (params?.intent) setIntent(params.intent);
@@ -613,16 +614,41 @@ function ContactPage({ lang, navigate, params, onToast }) {
     ev.preventDefault();
     const errs = validate();
     setErrors(errs);
+    setSubmitError("");
     if (Object.keys(errs).length > 0) return;
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 900)); // simulated POST
-    setSubmitting(false);
-    setSuccess(true);
-    const which =
-      intent === "correction" ? STRINGS.toast_correction_sent[lang] :
-      intent === "send_source" ? STRINGS.toast_source_sent[lang] :
-      STRINGS.toast_contact_sent[lang];
-    onToast(which);
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          intent,
+          name,
+          email,
+          message,
+          pageUrl,
+          lang,
+          sourcePath: window.location.hash || window.location.pathname,
+          consent,
+          company: "",
+        }),
+      });
+      let result = {};
+      try {
+        result = await response.json();
+      } catch {}
+      if (!response.ok || !result.ok) throw new Error(result.error || "contact_send_failed");
+      setSuccess(true);
+      const which =
+        intent === "correction" ? STRINGS.toast_correction_sent[lang] :
+        intent === "send_source" ? STRINGS.toast_source_sent[lang] :
+        STRINGS.toast_contact_sent[lang];
+      onToast(which);
+    } catch {
+      setSubmitError(t("c_send_failed"));
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (success) {
@@ -642,7 +668,7 @@ function ContactPage({ lang, navigate, params, onToast }) {
                     {t("c_back")}
                   </button>
                   <button className="btn btn-secondary" onClick={() => {
-                    setSuccess(false); setName(""); setEmail(""); setMessage(""); setConsent(false);
+                    setSuccess(false); setName(""); setEmail(""); setMessage(""); setConsent(false); setSubmitError("");
                   }}>
                     {lang === "th" ? "ส่งข้อความอีกครั้ง" : "Send another message"}
                   </button>
@@ -663,6 +689,7 @@ function ContactPage({ lang, navigate, params, onToast }) {
             <div className="section-kicker">Contact</div>
             <h1 className="hero-h1" style={{ fontSize: "clamp(32px, 5vw, 52px)" }}>{t("contact_h1")}</h1>
             <p className="dek" style={{ marginTop: 16 }}>{t("contact_sub")}</p>
+            <p className="helper" style={{ marginTop: 10 }}>{t("contact_fallback")}</p>
 
             <form noValidate onSubmit={submit} style={{ marginTop: 36, display: "grid", gap: 20 }}>
               <div className="field">
@@ -734,6 +761,7 @@ function ContactPage({ lang, navigate, params, onToast }) {
                   {submitting ? t("c_sending") : t("send_message")}
                 </button>
               </div>
+              {submitError && <div role="alert" className="err">{submitError}</div>}
             </form>
           </div>
         </div>

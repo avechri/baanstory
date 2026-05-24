@@ -129,6 +129,7 @@ const STRINGS = {
   // Contact
   contact_h1: { en: "How can we help?", th: "เราช่วยอะไรคุณได้บ้าง" },
   contact_sub: { en: "Tell us what you need. Pick an option below and we'll route your message to the right person.", th: "บอกเราว่าคุณต้องการอะไร แล้วเลือกหัวข้อด้านล่าง เราจะส่งข้อความของคุณไปยังคนที่เกี่ยวข้อง" },
+  contact_fallback: { en: "If this form doesn't work, email ask@baanstory.com.", th: "ถ้าแบบฟอร์มใช้ไม่ได้ โปรดอีเมล ask@baanstory.com" },
   c_about: { en: "What's this about?", th: "เรื่องที่ต้องการติดต่อคืออะไร" },
   c_choose: { en: "Choose one", th: "เลือกหนึ่งข้อ" },
   c_name: { en: "Your name", th: "ชื่อของคุณ" },
@@ -144,6 +145,7 @@ const STRINGS = {
   c_success_h: { en: "Thanks — we've got your message.", th: "ขอบคุณ เราได้รับข้อความของคุณแล้ว" },
   c_success_b: { en: "We read every submission. You'll hear back within 2 business days, sometimes sooner.", th: "เราตรวจอ่านทุกข้อความ และจะตอบกลับภายใน 2 วันทำการ บางครั้งอาจเร็วกว่า" },
   c_back: { en: "Back to events", th: "กลับไปที่งานอีเวนต์" },
+  c_send_failed: { en: "We could not send this message. Please try again, or email ask@baanstory.com.", th: "ส่งข้อความไม่สำเร็จ กรุณาลองอีกครั้ง หรืออีเมล ask@baanstory.com" },
 
   // Errors
   err_name: { en: "Please enter your name.", th: "กรุณากรอกชื่อของคุณ" },
